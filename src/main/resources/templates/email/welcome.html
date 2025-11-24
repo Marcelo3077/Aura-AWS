@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            padding: 40px 30px;
+            color: #333;
+        }
+        .content h2 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .content p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        .highlight {
+            background-color: #f0f4ff;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🌟 ¡Bienvenido a Aura!</h1>
+    </div>
+    <div class="content">
+        <h2>Hola, <span th:text="${firstName}">Usuario</span>!</h2>
+
+        <p>Nos emociona tenerte como parte de nuestra comunidad. Tu cuenta ha sido creada exitosamente.</p>
+
+        <div class="highlight">
+            <strong>Tipo de cuenta:</strong> <span th:text="${role}">USER</span><br>
+            <strong>Email registrado:</strong> <span th:text="${email}">email@example.com</span>
+        </div>
+
+        <p th:if="${role == 'USER'}">
+            Ahora puedes explorar nuestros servicios y contratar a los mejores técnicos profesionales.
+        </p>
+
+        <p th:if="${role == 'TECHNICIAN'}">
+            Completa tu perfil y añade tus certificaciones para empezar a recibir solicitudes de clientes.
+        </p>
+
+        <p th:if="${role == 'ADMIN' or role == 'SUPERADMIN'}">
+            Tu cuenta de administrador ha sido configurada. Puedes acceder al panel de administración.
+        </p>
+
+        <a href="#" class="button">Ir a Mi Cuenta</a>
+    </div>
+    <div class="footer">
+        <p>Este es un correo automático de Aura. Por favor no respondas a este mensaje.</p>
+        <p>&copy; 2025 Aura - Todos los derechos reservados</p>
+    </div>
+</div>
+</body>
+</html>

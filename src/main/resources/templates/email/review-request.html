@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px 30px; text-align: center; }
+        .stars { font-size: 40px; margin: 20px 0; }
+        .button { display: inline-block; padding: 15px 40px; background: #19547b; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; font-weight: bold; }
+        .footer { background: #f9f9f9; padding: 20px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>⭐ ¿Cómo fue tu experiencia?</h1>
+    </div>
+    <div class="content">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <h2>Tu opinión es muy importante</h2>
+        <p>El servicio de tu reserva #<span th:text="${reservationId}">123</span> ha sido completado.</p>
+        <p>Ayuda a otros usuarios compartiendo tu experiencia con una reseña.</p>
+        <a href="#" class="button">Dejar mi Reseña</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Aura - Tu Opinión Cuenta</p>
+    </div>
+</div>
+</body>
+</html>

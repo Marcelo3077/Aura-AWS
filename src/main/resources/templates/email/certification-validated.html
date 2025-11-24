@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px 30px; text-align: center; }
+        .badge { font-size: 80px; margin: 20px 0; }
+        .cert-box { background: #f0f4ff; border: 2px solid #667eea; border-radius: 10px; padding: 20px; margin: 20px 0; }
+        .footer { background: #f9f9f9; padding: 20px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🎓 Certificación Validada</h1>
+    </div>
+    <div class="content">
+        <div class="badge">🏆</div>
+        <h2>¡Felicidades!</h2>
+        <p>Tu certificación ha sido aprobada por nuestro equipo de administradores.</p>
+
+        <div class="cert-box">
+            <h3 th:text="${certificationTitle}">Certificación en Plomería</h3>
+            <p><strong>Validado por:</strong> <span th:text="${adminName}">Admin Name</span></p>
+        </div>
+
+        <p>Esta certificación ahora aparecerá en tu perfil público y aumentará tu credibilidad ante los clientes.</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Aura - Calidad Certificada</p>
+    </div>
+</div>
+</body>
+</html>

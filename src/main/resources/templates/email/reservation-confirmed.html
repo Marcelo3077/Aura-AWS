@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px 30px; }
+        .success-icon { font-size: 60px; text-align: center; margin: 20px 0; }
+        .info-box { background: #fff5f5; border-left: 4px solid #f5576c; padding: 15px; margin: 20px 0; }
+        .footer { background: #f9f9f9; padding: 20px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>✅ ¡Reserva Confirmada!</h1>
+    </div>
+    <div class="content">
+        <div class="success-icon">🎉</div>
+        <h2>¡Excelentes noticias!</h2>
+        <p>Tu reserva ha sido confirmada por <strong th:text="${technicianName}">el técnico</strong>.</p>
+
+        <div class="info-box">
+            <p><strong>Fecha del servicio:</strong> <span th:text="${serviceDate}">2025-01-15</span></p>
+            <p><strong>ID de Reserva:</strong> #<span th:text="${reservationId}">123</span></p>
+        </div>
+
+        <p>El técnico llegará en la fecha y hora acordadas. Te enviaremos un recordatorio 24 horas antes.</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Aura - Servicios Profesionales a tu Alcance</p>
+    </div>
+</div>
+</body>
+</html>

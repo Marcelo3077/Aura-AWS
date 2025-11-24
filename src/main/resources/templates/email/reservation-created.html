@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 30px auto; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px 30px; }
+        .info-box { background: #f0fff4; border-left: 4px solid #38ef7d; padding: 15px; margin: 20px 0; }
+        .info-box p { margin: 5px 0; }
+        .footer { background: #f9f9f9; padding: 20px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📅 Reserva Creada</h1>
+    </div>
+    <div class="content">
+        <h2>¡Tu reserva ha sido confirmada!</h2>
+        <p>Hemos recibido tu solicitud de servicio. A continuación los detalles:</p>
+
+        <div class="info-box">
+            <p><strong>ID de Reserva:</strong> #<span th:text="${reservationId}">123</span></p>
+            <p><strong>Servicio:</strong> <span th:text="${serviceName}">Plomería</span></p>
+            <p><strong>Fecha:</strong> <span th:text="${serviceDate}">2025-01-15</span></p>
+            <p><strong>Estado:</strong> Esperando confirmación del técnico</p>
+        </div>
+
+        <p>Recibirás una notificación cuando el técnico confirme tu reserva.</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Aura - Plataforma de Servicios Técnicos</p>
+    </div>
+</div>
+</body>
+</html>
